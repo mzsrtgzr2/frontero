@@ -1,0 +1,13 @@
+FROM node:4
+
+RUN apt-get update -y
+RUN apt-get install automake make g++ uuid-dev wget libtool pkg-config build-essential autoconf automake -y
+RUN apt-get install libzmq-dev -y
+ADD ./cloud/package.json /package.json
+RUN npm install
+
+RUN mkdir /cloud
+ADD ./cloud/package.json /cloud/package.json
+ADD ./cloud/.babelrc /cloud/.babelrc
+RUN ln -s /node_modules /cloud/node_modules
+WORKDIR /cloud

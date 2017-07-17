@@ -1,0 +1,55 @@
+mongo:
+  image: mongo:latest
+  ports:
+   - "27017:27017"
+
+redis:
+  image: redis:latest
+  ports:
+   - "6379:6379"
+
+updater:
+  image: frontero_cloud_base
+  working_dir: /cloud/
+  command: npm run updater
+  volumes :
+  - ./cloud/src:/cloud/src
+  links:
+   - mongo
+   - redis
+   - analytics
+   - api
+
+api:
+  image: frontero_cloud_base
+  ports:
+   - "3030:3030"
+   - "3031:3031"
+  working_dir: /cloud/
+  command: npm run api
+  volumes :
+  - ./cloud/src:/cloud/src
+  links:
+   - mongo
+   - redis
+   - analytics
+
+web:
+  image: frontero_web
+  ports:
+   - "8000:8000"
+  working_dir: /web/
+  command: npm run web
+  volumes:
+  - ./web/src:/web/src
+  - ./web/cfg:/web/cfg
+  - ./clientlib/dist:/web/clientlib
+
+analytics:
+  image: samuelebistoletti/docker-statsd-influxdb-grafana:latest
+  ports:
+    - "3003:9000"
+    - "3004:8083"
+    - "8086:8086"
+    - "22022:22"
+    - "8125:8125/udp"

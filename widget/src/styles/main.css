@@ -1,0 +1,38 @@
+.messageInput{
+  color: blue;
+  border-radius:5px;
+}
+.container{
+  height: 300px;
+  width: 60%;
+}
+.mesContainer{
+  background-image: url("../components/chat/bg.jpg");
+  background-size: contain;
+  max-height: 400px;
+  overflow-y: auto;
+}
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 6px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+  outline: none;
+}
+.inputContainer{
+  padding: 7px;
+  background-color: #f5f1ee;
+}
+.mesInput{
+  position: absolute;
+    height: 55px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,11 @@
+FROM node:5.10.1
+
+
+RUN mkdir /web
+ADD /web/package.json /web/package.json
+ADD /web/.babelrc /web/.babelrc
+ADD /web/.eslintrc /web/.eslintrc
+ADD /web/webpack.config.js /web/webpack.config.js
+ADD /web/server.js /web/server.js
+WORKDIR /web
+RUN npm install

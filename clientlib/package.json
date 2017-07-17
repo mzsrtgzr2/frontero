@@ -1,0 +1,42 @@
+{
+  "name": "frontero",
+  "version": "0.0.1",
+  "description": "frontero clientlib",
+  "license": "MIT",
+  "repository": "",
+  "author": "",
+  "keywords": [
+    ""
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "exectimer": "^2.0.0",
+    "object-assign": "^4.1.0",
+    "socket.io-client": "^1.4.6",
+    "superagent": "^2.0.0",
+    "timediff": "^1.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "del": "2.0.2",
+    "dotbin": "^1.0",
+    "dts-generator": "^1.7",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-help": "^1.6.0",
+    "gulp-sequence": "0.4.1",
+    "webpack": "^1.13.1"
+  },
+  "engines": {
+    "node": ">=2.0.0"
+  }
+}

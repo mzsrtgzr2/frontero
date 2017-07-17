@@ -1,0 +1,18 @@
+mongo:
+  image: mongo:latest
+  ports:
+   - "27017:27017"
+
+redis:
+  image: redis:latest
+  ports:
+   - "6379:6379"
+
+analytics:
+  image: samuelebistoletti/docker-statsd-influxdb-grafana:latest
+  ports:
+    - "3003:9000"
+    - "3004:8083"
+    - "8086:8086"
+    - "22022:22"
+    - "8125:8125/udp"

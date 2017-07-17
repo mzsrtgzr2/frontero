@@ -1,0 +1,68 @@
+/* Base Application Styles */
+
+body {
+
+}
+
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.index .notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  background: #666;
+}
+.splitterWrapper{
+  padding: 100px;
+}
+.parallax img{
+      display: inherit !important;
+}
+.parallax-container{
+
+}
+.modal-s{
+  width: 40vw;
+  border-radius: 10%;
+}
+.modal-s-1{
+  width: 30vw;
+  height: 90vh;
+}
+.modal-m{
+  width: 60vw;
+}
+.modal-l{
+  width: 80vw;
+}
+.arc_s{
+  border-radius: 20px;
+}
+.m-t{
+  margin-top: 15px;
+}
+.m-t-md{
+  margin-top: 30px;
+}
+.header_c{
+  text-align:center;
+  font-size:20px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-buttom: 15px;
+}
+.text_ref_s{
+  font-size:14px;
+  text-align:center;
+}
+.text_err{
+  font-size:14px;
+  color: #ff0000;
+}

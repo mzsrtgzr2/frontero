@@ -1,0 +1,9 @@
+FROM frontero_cloud_base
+
+ADD ./cloud/tests/helpers/zombie /zombie
+ADD ./clientlib /clientlib
+ADD ./cloud/package.json /zombie/package.json
+ADD ./cloud/.babelrc /zombie/.babelrc
+RUN ln -s /node_modules /zombie/node_modules
+
+WORKDIR /zombie

@@ -1,0 +1,150 @@
+{
+  "name": "frontero",
+  "private": true,
+  "scripts": {
+    "test:all": "better-npm-run test:all",
+    "test:basic": "better-npm-run test:basic",
+    "test:stress": "better-npm-run test:stress",
+    "api": "better-npm-run api",
+    "updater": "better-npm-run updater",
+    "zombie": "better-npm-run zombie"
+  },
+  "devDependencies": {
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-watch": "^2.0.2",
+    "better-npm-run": "0.0.8",
+    "chai": "^3.2.0",
+    "chance": "^1.0.3",
+    "commander": "^2.9.0",
+    "concurrently": "^2.0.0",
+    "copyfiles": "^0.2.1",
+    "crypto": "0.0.3",
+    "dotbin": "^1.0.1",
+    "eslint": "^2.2.0",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^5.0.0",
+    "exectimer": "^2.0.0",
+    "faker": "^3.1.0",
+    "file-loader": "^0.8.4",
+    "glob": "^7.0.0",
+    "isparta-instrumenter-loader": "^1.0.0",
+    "istanbul": "^0.4.4",
+    "jshint": "^2.9.2",
+    "json2csv": "^3.6.1",
+    "minimist": "^1.2.0",
+    "mocha": "^2.5.3",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.2",
+    "open": "0.0.5",
+    "prog-quote": "^1.0.2",
+    "request": "^2.72.0",
+    "serial-mocha": "0.0.4",
+    "should": "^9.0.0",
+    "sleep": "^3.0.1",
+    "superagent": "^2.0.0-alpha.3",
+    "url-loader": "^0.5.6"
+  },
+  "dependencies": {
+    "ascii-art": "^1.0.3",
+    "async": "^2.0.0-rc.6",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-syntax-async-functions": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-plugin-transform-regenerator": "^6.11.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-3": "^6.11.0",
+    "babel-register": "^6.11.6",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.1",
+    "cli-table": "^0.3.1",
+    "compression": "^1.6.2",
+    "core-js": "^2.0.0",
+    "cors": "^2.7.1",
+    "cron": "^1.1.0",
+    "datejs": "^1.0.0-rc3",
+    "dockerode": "^2.2.10",
+    "express": "^4.13.4",
+    "faker": "^3.1.0",
+    "format-error": "^1.0.0",
+    "helmet": "^2.1.1",
+    "http-status-codes": "^1.0.6",
+    "image-to-ascii": "^3.0.3",
+    "install": "^0.8.1",
+    "jwt-simple": "^0.5.0",
+    "killable": "^1.0.0",
+    "mongoose": "^4.4.19",
+    "mongoose-likes": "^0.1.0",
+    "mongoose-paginate": "^5.0.0",
+    "mongoose-path-tree": "^1.3.5",
+    "morgan": "^1.7.0",
+    "node-statsd": "^0.1.1",
+    "normalize.css": "^4.0.0",
+    "npm": "^3.10.3",
+    "object-assign": "^4.1.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
+    "ratelimit.js": "^1.7.0",
+    "redis": "^2.6.2",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6",
+    "socket.io-events": "^0.4.6",
+    "socket.io-events-bouncer": "0.0.0",
+    "socket.io-redis": "^1.0.0",
+    "socketio-jwt": "^4.3.4",
+    "sticky-cluster": "^0.1.2",
+    "superagent": "^2.0.0",
+    "underscore": "^1.8.3",
+    "usage": "^0.7.1",
+    "validate.js": "^0.10.0",
+    "winston": "^2.2.0",
+    "zmq": "^2.15.3"
+  },
+  "betterScripts": {
+    "api": {
+      "command": "babel-watch ./src/api/index.js",
+      "env": {
+        "NODE_ENV": "test",
+        "DEBUG": "-"
+      }
+    },
+    "updater": {
+      "command": "babel-watch ./src/updater/index.js",
+      "env": {
+        "NODE_ENV": "test",
+        "DEBUG": "-"
+      }
+    },
+    "test": {
+      "command": "./node_modules/.bin/_mocha -R spec --bail $(find ./tests/ -name 'test.*.js') --compilers js:babel-core/register",
+      "env": {
+        "NODE_ENV": "test",
+        "LOAD_SERVER": "yes",
+        "DEBUG": "-"
+      }
+    },
+    "test:basic": {
+      "command": "./node_modules/.bin/_mocha -R spec --bail $(find ./tests/00_basic -name 'test.*.js') --compilers js:babel-core/register",
+      "env": {
+        "NODE_ENV": "test",
+        "LOAD_SERVER": "no",
+        "DEBUG": "-"
+      }
+    },
+    "test:stress": {
+      "command": "./node_modules/.bin/_mocha -R spec --bail $(find ./tests/10_stress -name 'test.*.js') --compilers js:babel-core/register",
+      "env": {
+        "NODE_ENV": "test",
+        "LOAD_SERVER": "no",
+        "DEBUG": "-"
+      }
+    },
+    "zombie": {
+      "command": "./node_modules/babel-cli/bin/babel-node.js ./tests/helpers/zombie/src/zombie.js --zid 123 --ch channel1 --key 6a65f72b12b7bdd71d97 --secret f5fb04cef5bc775c1650897efb5251fadd9c06140eb2571d3a7d3f2bc58b81005fe2263d89f8f35c836eab3820b0d509 --username tester1 --email tester1@email.com"
+    }
+  }
+}

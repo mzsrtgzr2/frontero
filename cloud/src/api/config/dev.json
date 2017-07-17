@@ -1,0 +1,57 @@
+{
+  "port": 3030,
+  "developerAuth": {
+    "secret": "NyrwtqHjZBYVCXwCZ7hbkgCrY3MLTEUacpNixhZyaAUAYRUWom"
+  },
+  "appAuth": {
+    "secret": "bYUHueVMVHqvpidMEUbXNsAxXmeCwxoTwu8zVuYvdUnTRVKrd9"
+  },
+  "jwtTokenTimeout": 5,
+  "limit": {
+    "query": {
+      "maxInOneQuery": 30
+    },
+    "app": {
+      "enabled": true,
+      "maxPushesPerDay": 20,
+      "maxParallelConnections": 50,
+      "maxArchivedPosts": 10
+    },
+    "bruteforce": {
+      "enabled": true,
+      "tokenDeveloper": [
+        {"interval": 30, "limit": 50 }
+      ],
+      "tokenApp": [
+        {"interval": 30, "limit": 50 }
+      ],
+      "teamQueries": [
+        {"interval": 30, "limit": 50 }
+      ],
+      "teamChanges": [
+        {"interval": 30, "limit": 50 }
+      ],
+      "teamCreations": [
+        {"interval": 30, "limit": 50 }
+      ],
+      "channelCreations": [
+        {"interval": 60, "limit": 10 }
+      ],
+      "usersCreations": [
+        {"interval": 60, "limit": 5 }
+      ],
+      "socketQueries": [
+        {"interval": 60, "limit": 200 }
+      ],
+      "socketEdits": [
+        {"interval": 60, "limit": 150 }
+      ],
+      "socketAdds": [
+        {"interval": 60, "limit": 100 }
+      ],
+      "analyticsAdds": [
+        {"interval": 60, "limit": 5 }
+      ]
+    }
+  }
+}
